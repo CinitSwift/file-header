@@ -32,7 +32,7 @@
 
 打开Idea或者webstorm -> File -> Settings -> Tools -> File Watchers，点击import，选择`watchers.xml`导入。
 
-![1623331887938](.\01.png)
+![1623331887938](01.png)
 
 导入后把它勾选上，点击右下角的apply和ok就完事了。
 
