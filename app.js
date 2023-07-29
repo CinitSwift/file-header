@@ -35,7 +35,7 @@ try {
   if (!editor || !time) {
 
     let header;
-    if (['js', 'jsx', 'tsx'].includes(fileExt)) {
+    if (['js', 'ts','jsx', 'tsx'].includes(fileExt)) {
       header = `/*\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n */\n`;
     } else if (['vue', 'html'].includes(fileExt)) {
       header = `<!--\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n -->\n`;
