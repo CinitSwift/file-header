@@ -34,8 +34,15 @@ try {
 
   if (!editor || !time) {
 
-    const header =
-      `/*\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n */\n`
+    let header;
+    if (['js', 'ts','jsx', 'tsx'].includes(fileExt)) {
+      header = `/*\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n */\n`;
+    } else if (['vue', 'html'].includes(fileExt)) {
+      header = `<!--\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n -->\n`;
+    } else {
+      // For other file types, you can define a default header here.
+      header = `/*\n * @Author: ${user}\n * @Date: ${date}\n * @LastEditors: ${user}\n * @LastEditTime: ${date}\n * @Description: desc\n */\n`;
+    }
 
     sourceStr = header + sourceStr
 
