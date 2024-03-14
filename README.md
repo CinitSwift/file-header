@@ -1,7 +1,7 @@
 # IDEA/Webstorm 利用file watchers自动生成文件头部注释
 
-- 本插件基于[file-header](https://github.com/file-header/file-header)，添加了节流功能，五秒触发一次
-
+- 本插件基于[file-header](https://github.com/CinitSwift/file-header)，添加了节流功能，五秒触发一次
+- 恢复原本的代码不会再次更新头部信息
 注释示例：
 
 ```js
