@@ -7,7 +7,7 @@ const fileEncode = process.argv[4]
 const fileExt = process.argv[5]
 const user = process.argv[6]
 const filePath = path.join(fileDir, fileName)
-
+const dateFun = require('C:\\Users\\Administrator\\Downloads\\file-header-main\\throttle.js')
 const isLess = num => num < 10 ? ('0' + num) : num
 
 const timeFormat = now => {
@@ -18,7 +18,14 @@ const timeFormat = now => {
 console.log(`path: ${filePath}, encode: ${fileEncode}, ext: ${fileExt}`)
 
 try {
-
+  
+  const mainR = dateFun.main();
+  if (!mainR){
+    console.log('未通过',mainR)
+    return
+  }else{
+    console.log('通过',mainR)
+  }
   const source = fs.readFileSync(filePath, {
     encoding: fileEncode
   })
