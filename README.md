@@ -1,5 +1,8 @@
 # IDEA/Webstorm 利用file watchers自动生成文件头部注释
 
+- 本插件基于[file-header](https://github.com/CinitSwift/file-header)，添加了节流功能，五秒触发一次
+- 五秒内恢复原本的代码不会再次更新头部信息
+ 
 注释示例：
 
 ```js
@@ -28,7 +31,14 @@
 <option name="arguments" value="C:\Users\cinitswift\Desktop\app.js $FileDir$ $FileName$ $FileEncoding$ $FileExt$ name" />
 ```
 
+
 该项`value`中的路径替换成**你电脑上**`app.js`的**绝对路径**，并把`$FileExt$`后面的`name`替换成**你的姓名**
+
+app.js中的引入改成绝对路径，例如：
+```javascript
+const dateFun = require('C:\\Users\\Administrator\\Downloads\\file-header-main\\throttle.js')
+```
+
 
 打开Idea或者webstorm -> File -> Settings -> Tools -> File Watchers，点击import，选择`watchers.xml`导入。
 
